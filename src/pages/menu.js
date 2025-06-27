@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Menu({ cart, setCart }) {
   const foodItems = [

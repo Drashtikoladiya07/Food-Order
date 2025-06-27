@@ -9,13 +9,13 @@ function CheckoutPage() {
         payment: "",
     });
 
-
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("Submitted Checkout Data:", formData);
         setSubmitted(true);
     };
 
@@ -28,19 +28,19 @@ function CheckoutPage() {
                     <h2 className="text-2xl font-bold text-center py-5">Checkout</h2>
                     <form onSubmit={handleSubmit} className="flex flex-col justify-center text-gray-600 max-w-xl mx-auto border p-4 hover:shadow-xl">
                         <label htmlFor="name" className="font-semibold py-2">Name:</label>
-                        <input type="text" name="name" placeholder="Enter your name.." value={formData.name} onChange={handleChange} required className="border rounded-md px-3 py-2 my-2 bg-gray-100" />
+                        <input type="text" name="name" placeholder="Enter your name.." value={formData.name} onChange={handleChange} requiredclassName="border rounded-md px-3 py-2 my-2 bg-gray-100" />
                         <label htmlFor="email" className="font-semibold py-2">Email:</label>
-                        <input type="email" name="email" placeholder="Enter your email.." value={formData.email} onChange={handleChange} required className="border rounded-md px-3 py-2 my-2 bg-gray-100" />
+                        <input type="email" name="email" placeholder="Enter your email.." value={formData.email} onChange={handleChange} requiredclassName="border rounded-md px-3 py-2 my-2 bg-gray-100" />
                         <label htmlFor="address" className="font-semibold py-2">Address:</label>
-                        <textarea name="address" placeholder="Enter your address.." value={formData.address} onChange={handleChange} required className="border rounded-md px-3 py-2 my-2 bg-gray-100" />
+                        <textarea name="address" placeholder="Enter your address.." value={formData.address} onChange={handleChange} requiredclassName="border rounded-md px-3 py-2 my-2 bg-gray-100" />
                         <label htmlFor="payment" className="font-semibold py-2">Payment Method:</label>
-                        <select name="payment" value={formData.payment} onChange={handleChange} required className="border rounded-md px-3 py-2 my-2 mb-4 bg-gray-100">
+                        <select name="payment" value={formData.payment} onChange={handleChange} requiredclassName="border rounded-md px-3 py-2 my-2 mb-4 bg-gray-100">
                             <option value="">Select Payment Method</option>
                             <option value="UPI">UPI</option>
                             <option value="Cash">Cash</option>
                             <option value="Card">Card</option>
                         </select>
-                        <button type="submit" className="bg-yellow-500 hover:bg-yellow-600 w-40 justify-center mx-auto text-white font-semibold px-4 py-2 rounded">Click to Pay</button>
+                        <button type="submit"className="bg-yellow-500 hover:bg-yellow-600 w-40 justify-center mx-auto text-white font-semibold px-4 py-2 rounded">Click to Pay</button>
                     </form>
                 </div>
             )}

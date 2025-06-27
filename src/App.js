@@ -9,7 +9,6 @@ import Checkout from "./pages/checkout";
 function App() {
     const [cart, setCart] = useState([]);
 
-    // Load cart from localStorage on first render
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem("cart"));
         if (storedCart) {
