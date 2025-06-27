@@ -8,17 +8,14 @@ import Contact from "./pages/contact";
 import Checkout from "./pages/checkout";
 function App() {
     const [cart, setCart] = useState([]);
+
+    // Load cart from localStorage on first render
     useEffect(() => {
-        const storedCart = localStorage.getItem("cart");
+        const storedCart = JSON.parse(localStorage.getItem("cart"));
         if (storedCart) {
-            setCart(JSON.parse(storedCart));
+            setCart(storedCart);
         }
     }, []);
-
-    useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cart));
-        console.log("Cart updated:", cart);
-    }, [cart]);
 
     return (
         <Router>
